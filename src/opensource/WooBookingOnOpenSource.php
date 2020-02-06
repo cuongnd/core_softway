@@ -25,5 +25,8 @@ class      WooBookingOnOpenSource
     public function getSession(){
         $this->open_source->getSession();
     }
+    public function redirect($location, $status=302,$x_redirect_by = ""){
+        $this->open_source->redirect($location, $status ,  $x_redirect_by);
+    }
 
 }

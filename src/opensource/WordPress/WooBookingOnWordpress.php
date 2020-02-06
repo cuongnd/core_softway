@@ -559,6 +559,9 @@ class WooBookingOnWordpress
 	 * @param array $args Parameters and arguments. If you passed custom params to add_meta_box(),
 	 * they will be in $args['args']
 	 */
+	function redirect($location, $status=302,$x_redirect_by = 'WordPress' ){
+        wp_redirect( $location, $status ,  $x_redirect_by );
+    }
 	function my_render_menu_metabox($object, $args)
 	{
 		global $nav_menu_selected_id;
