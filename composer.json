@@ -1,0 +1,29 @@
+{
+    "name": "netbaseteam/woobooking",
+    "description": "woobooking.",
+    "type": "library",
+    "keywords": [
+        "woobooking"
+    ],
+    "homepage": "https://github.com/cuongnd/woobooking",
+    
+    "authors": [
+        {
+            "name": "woobooking",
+            "email": "nguyendinhcuong@gmail.com",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cuongnd/woobooking/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+      "ext-simplexml": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
