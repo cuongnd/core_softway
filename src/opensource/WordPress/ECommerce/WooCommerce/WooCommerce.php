@@ -14,17 +14,20 @@ class WooCommerce
     {
         $cart=Cart::getInstance();
         //add_action( 'woocommerce_checkout_order_review', [$checkout,'woocommerce_order_review'], 10 );
-        add_action( 'woocommerce_before_cart_contents', [$cart,'woocommerce_before_cart_contents'],  1, 1  );
-        add_action( 'woocommerce_cart_contents', [$cart,'woocommerce_cart_contents'],  1, 1  );
-        add_action( 'woocommerce_after_cart_contents', [$cart,'woocommerce_after_cart_contents'],  1, 1  );
+        add_action( 'woocommerce_before_cart_contents',array($cart,'woocommerce_before_cart_contents'),  1, 1  );
+        add_action( 'woocommerce_cart_contents', array($cart,'woocommerce_cart_contents'),  1, 1  );
+        add_action( 'woocommerce_after_cart_contents', array($cart,'woocommerce_after_cart_contents'),  1, 1  );
 
 
         $checkout=CheckOut::getInstance();
         //add_action( 'woocommerce_checkout_order_review', [$checkout,'woocommerce_order_review'], 10 );
-        add_action( 'woocommerce_checkout_order_processed', [$checkout,'woocommerce_checkout_order_processed'],  10, 3   );
+        add_action( 'woocommerce_checkout_order_processed', array($checkout,'woocommerce_checkout_order_processed'),  10, 3   );
 
 
 
 
+    }
+    public function get_product($product_id){
+        return function_exists('wc_get_product')? wc_get_product($product_id):null;
     }
 }

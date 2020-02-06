@@ -5,6 +5,7 @@ class ECommerce
 {
     public static $instance=null;
     public static function getInstance(){
+
         if(!self::$instance){
             $using_ECommerce="WooCommerce";
             //set system using WooCommerce

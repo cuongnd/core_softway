@@ -23,7 +23,7 @@ class WooBookingOnWordpress
 {
 	public static $instance = null;
 	public static $items_submenus = null;
-	public static $key_woo_booking = "woobooking";
+	public static $key_woo_booking = "wpfindclass";
 	public static $version = "1.0";
 	public static $prefix_link = "wb_";
 	public static $namespace = "woobooking_api/1.0";
@@ -431,8 +431,9 @@ class WooBookingOnWordpress
 
 	}
 
-	function getEcommerce()
+	public function getEcommerce()
 	{
+        $this->ecommerce= ECommerce::getInstance();
 		return $this->ecommerce;
 	}
 
