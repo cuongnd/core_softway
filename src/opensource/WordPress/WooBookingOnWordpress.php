@@ -204,7 +204,7 @@ class WooBookingOnWordpress
 	{
 
 		if (!session_id()) {
-			session_start();
+			@session_start();
 		}
 		$wp_session = $_SESSION;
 		return $wp_session;
