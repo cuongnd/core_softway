@@ -30,4 +30,7 @@ class WooCommerce
     public function get_product($product_id){
         return function_exists('wc_get_product')? wc_get_product($product_id):null;
     }
+    public function get_products($args){
+        return function_exists('wc_get_products')? wc_get_products($args):array();
+    }
 }

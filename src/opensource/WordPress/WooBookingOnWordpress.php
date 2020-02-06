@@ -409,11 +409,7 @@ class WooBookingOnWordpress
 
 		if ($app->getClient() == 1) {
 
-			if (self::is_backend_wordpress()) {
-				$this->initWordpressBackend();
-			} else {
-				$this->initOpenWooBookingWooPanelBackend();
-			}
+            $this->initWordpressBackend();
 		} else {
 
 			$this->initOpenWooBookingWordpressFrontend();
@@ -755,6 +751,7 @@ class WooBookingOnWordpress
 
 	function frontend_shapeSpace_print_scripts()
 	{
+
 		$root_url = self::get_root_url();
 		?>
         <script type="text/javascript">
