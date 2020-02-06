@@ -150,7 +150,7 @@ class WooBookingView extends CMSObject
         }
 
 
-        $link=Factory::getRootUrl()."sellercenter/wb_$view/?task=$view.$task".(is_array($items_var)&&count($items_var)?'&':null).implode("&",$http_list_var);
+        $link=Factory::getRootUrl()."wp-admin/admin.php?page=wb_$view&task=$view.$task".(is_array($items_var)&&count($items_var)?'&':null).implode("&",$http_list_var);
         return $link;
     }
     public function loadTemplate($tpl){
