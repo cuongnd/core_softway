@@ -634,17 +634,17 @@ class WooBookingOnWordpress
 		$first_view = (object)$first_view;
 		$menu_slug = str_replace('_', '-', $first_view->menu_slug);
 		$link_dashboard = "wb_dashboard";
-		add_menu_page('Wpbookingpro', 'Wpbookingpro', 'manage_options', $link_dashboard, array($this, 'wpbookingpro_page'));
+		add_menu_page('Wp find class', 'Wp find class', 'manage_options', $link_dashboard, array($this, 'wp_find_class_page'));
 		foreach ($list_view_admin as $key => $view) {
 			$view = (object)$view;
 			add_submenu_page($link_dashboard, $view->label, $view->label, 'manage_options', $view->menu_slug,
-				array($this, 'wpbookingpro_page'));
+				array($this, 'wp_find_class_page'));
 		}
 
 
 	}
 
-	function wpbookingpro_page()
+	function wp_find_class_page()
 	{
 		$input = Factory::getInput();
 		$page = $input->getString('page', '');
