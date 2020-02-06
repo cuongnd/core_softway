@@ -254,7 +254,7 @@ class WooBookingOnWordpress
 			echo "cannot found page";
 			die;
 		}
-		add_shortcode("wp-booking-pro", array($this, 'woo_booking_render_by_tag_func'));
+		add_shortcode("wp-find-class", array($this, 'woo_booking_render_by_tag_func'));
 
 		$list_view = self::get_list_layout_block_frontend();
 
@@ -376,16 +376,7 @@ class WooBookingOnWordpress
 		if (count($list_table_in_database) == 0) {
 			$installed = false;
 		}
-		if (!class_exists('WooCommerce')) {
-			$installed = false;
 
-		}
-
-
-		if (!class_exists('NBWooCommerce_Dashboard')) {
-			// some code
-			$installed = false;
-		}
 
 		$json_table_need_install = File::read(WOOBOOKING_PATH_ROOT . "/install/tables.json");
 
@@ -606,7 +597,7 @@ class WooBookingOnWordpress
                             <input type="hidden" class="menu-item-title" name="menu-item[-1][menu-item-title]"
                                    value="<?php echo $page['title'] ?>">
                             <input type="hidden" class="menu-item-url" name="menu-item[-1][menu-item-url]"
-                                   value="<?php bloginfo('wpurl'); ?>/<?php echo "wp-booking-pro/?page=$key" ?>">
+                                   value="<?php bloginfo('wpurl'); ?>/<?php echo "wp-find-class/?page=$key" ?>">
                         </li>
 					<?php } ?>
                 </ul>
@@ -941,7 +932,7 @@ class WooBookingOnWordpress
 		$html = '<html><head>';
 		$html .= '<meta http-equiv="content-type" content="text/html; charset=utf-8" />';
 		$html .= '<script>document.location.href=' . json_encode(str_replace("'", '&apos;',
-				$root_url . '/wp-booking-pro/?page=install-form')) . ';</script>';
+				$root_url . '/wp-find-class/?page=install-form')) . ';</script>';
 		$html .= '</head><body></body></html>';
 		echo $html;
 	}
@@ -1035,12 +1026,13 @@ class WooBookingOnWordpress
 
 	public static function pluginprefix_activation()
 	{
+
 		$list_page = WooBookingOnWordpress::get_list_layout_view_frontend();
 		$key_woo_booking = self::$key_woo_booking;
-		$key_page = "wp-booking-pro";
+		$key_page = "wp-find-class";
 		$my_post = array(
 			'post_name' => "$key_page",
-			'post_title' => "Wp booking pro",
+			'post_title' => "Wp find class",
 			'post_content' => "[$key_page]",
 			'post_status' => "publish",
 			'post_author' => get_current_user_id(),
@@ -1087,7 +1079,7 @@ class WooBookingOnWordpress
                             <input type="hidden" class="menu-item-title" name="menu-item[-1][menu-item-title]"
                                    value="<?php echo $page['title'] ?>">
                             <input type="hidden" class="menu-item-url" name="menu-item[-1][menu-item-url]"
-                                   value="<?php bloginfo('wpurl'); ?>/<?php echo "wp-booking-pro/?page=$key_woo_booking-$key" ?>">
+                                   value="<?php bloginfo('wpurl'); ?>/<?php echo "wp-find-class/?page=$key_woo_booking-$key" ?>">
                         </li>
 					<?php } ?>
                 </ul>
