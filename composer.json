@@ -1,21 +1,21 @@
 {
-    "name": "netbaseteam/woobooking",
-    "description": "woobooking.",
+    "name": "softwayteam/core_web",
+    "description": "core web.",
     "type": "library",
     "keywords": [
-        "woobooking"
+        "core web"
     ],
     "homepage": "https://github.com/cuongnd/woobooking",
     
     "authors": [
         {
-            "name": "woobooking",
+            "name": "cuongnd",
             "email": "nguyendinhcuong@gmail.com",
             "role": "lead"
         }
     ],
     "support": {
-        "issues": "https://github.com/cuongnd/woobooking/issues"
+        "issues": "https://github.com/cuongnd/softwayteam/issues"
     },
     "require": {
         "php": ">=5.3.3",
