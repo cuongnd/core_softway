@@ -538,7 +538,7 @@ class WooBookingOnWordpress
 			vc_add_shortcode_param('woo_booking_block_type', array($this, 'woo_booking_block_type_settings_field'));
 		}
 		add_action('admin_footer', array($this, 'wp_hook_add_script_footer'));
-
+        add_action('rest_api_init', array($this, 'woobooking_register_rest_route'));
 		//vc_add_shortcode_param('my_param', 'my_param_settings_field', plugins_url('test.js', __FILE__));
 
 
